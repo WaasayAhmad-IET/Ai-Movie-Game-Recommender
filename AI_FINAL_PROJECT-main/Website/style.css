@@ -1,0 +1,99 @@
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+body { transition: background-color 0.3s, color 0.3s; }
+
+/* Header */
+header { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background-color:#1e1e2f; color:#fff; position:sticky; top:0; z-index:100; }
+header .logo { font-size:24px; font-weight:bold; }
+header nav ul { list-style:none; display:flex; gap:25px; }
+header nav a { text-decoration:none; color:#fff; font-weight:500; transition:0.3s; }
+header nav a:hover { color:#f39c12; }
+#toggle-mode { background:none; border:none; color:#fff; font-size:22px; cursor:pointer; transition:0.3s; }
+#toggle-mode:hover { transform:rotate(20deg); }
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 80vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1601924638867-3ec00d6e6ed2?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    display:flex; align-items:center; justify-content:center; text-align:center; color:#fff;
+}
+.hero-content h1 { font-size:3rem; margin-bottom:20px; animation: fadeIn 2s ease-in; }
+.hero-content p { font-size:1.2rem; margin-bottom:30px; animation: fadeIn 2.5s ease-in; }
+.hero input { padding:12px 20px; width:300px; border-radius:50px; border:none; outline:none; transition:0.3s; font-size:16px; }
+.hero input:focus { width:350px; box-shadow:0 0 15px rgba(243,156,18,0.7); }
+
+/* Sections */
+section { padding:60px 50px; }
+section h2 { text-align:center; margin-bottom:40px; font-size:2rem; color:#f39c12; }
+
+/* Grid */
+.grid-container { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:25px; }
+.grid-item { position:relative; border-radius:15px; overflow:hidden; cursor:pointer; transition:transform 0.4s; box-shadow:0 10px 25px rgba(0,0,0,0.3); }
+.grid-item img { width:100%; height:300px; object-fit:cover; display:block; transition:0.3s; }
+.grid-item:hover { transform:scale(1.05); }
+.grid-item h3 { position:absolute; bottom:0; width:100%; text-align:center; padding:15px 0; background:rgba(0,0,0,0.6); color:#fff; font-size:1.1rem; opacity:0; transition:opacity 0.3s; }
+.grid-item:hover h3 { opacity:1; }
+
+/* Chatbot Floating Logo */
+#chatbot-logo {
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    background-color:#f39c12;
+    color:#fff;
+    font-size:30px;
+    padding:15px;
+    border-radius:50%;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    transition:transform 0.3s;
+    z-index:1000;
+}
+#chatbot-logo:hover { transform:scale(1.1); }
+
+/* Chatbot Popup */
+#chatbot-popup {
+    position:fixed;
+    bottom:90px;
+    right:30px;
+    width:350px;
+    max-width:90%;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    display:none;
+    flex-direction:column;
+    overflow:hidden;
+    z-index:1001;
+}
+#chat-header {
+    background:#1e1e2f;
+    color:#fff;
+    padding:15px;
+    font-weight:bold;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+#chat-header button { background:none; border:none; color:#fff; font-size:18px; cursor:pointer; }
+#chat-box { height:300px; padding:15px; overflow-y:auto; display:flex; flex-direction:column; gap:10px; background:#f1f1f1; }
+#chat-box .user-msg { align-self:flex-end; background:#1e1e2f; color:#fff; padding:10px 15px; border-radius:20px; max-width:70%; }
+#chat-box .bot-msg { align-self:flex-start; background:#f39c12; color:#fff; padding:10px 15px; border-radius:20px; max-width:70%; }
+.chat-input-container { display:flex; gap:10px; margin:10px; }
+#chat-input { flex:1; padding:10px 15px; border-radius:25px; border:1px solid #ccc; outline:none; }
+#chat-send { padding:10px 20px; border:none; background-color:#1e1e2f; color:#fff; border-radius:25px; cursor:pointer; transition:0.3s; }
+#chat-send:hover { background-color:#f39c12; }
+
+/* Footer */
+footer { text-align:center; padding:25px 50px; background-color:#1e1e2f; color:#fff; }
+
+/* Dark Mode */
+body.dark { background-color:#121212; color:#eee; }
+body.dark header { background-color:#1c1c1c; }
+body.dark .grid-item h3 { background:rgba(30,30,30,0.8); }
+body.dark #chat-box { background-color:#1c1c1c; color:#eee; }
+body.dark #chat-input { background-color:#1e1e2f; color:#eee; border:1px solid #555; }
+
+/* Animations */
+@keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }

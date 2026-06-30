@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch & Play Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🎬🎮 Watch & Play Hub</div>
+        <nav>
+            <ul>
+                <li><a href="#movies">Movies</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+        <button id="toggle-mode">🌙</button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Favorite Movies & Games</h1>
+            <p>Explore trending titles and get instant recommendations based on your mood.</p>
+            <input type="text" id="search-input" placeholder="Search Movies & Games...">
+        </div>
+    </section>
+
+    <section id="movies">
+        <h2>Top Movies</h2>
+        <div class="grid-container" id="movie-list"></div>
+    </section>
+
+    <section id="games">
+        <h2>Popular Games</h2>
+        <div class="grid-container" id="game-list"></div>
+    </section>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>This website recommends movies and games based on your mood. Click the chatbot icon at the bottom-right to get instant AI suggestions!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Watch & Play Hub. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Chatbot floating button -->
+    <div id="chatbot-logo">💬</div>
+
+    <!-- Chatbot pop-up -->
+    <div id="chatbot-popup">
+        <div id="chat-header">
+            <span>AI Chatbot</span>
+            <button id="close-chat">✖</button>
+        </div>
+        <div id="chat-box"></div>
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Enter your choice or query">
+            <button id="chat-send">Send</button>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
